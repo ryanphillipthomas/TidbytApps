@@ -1,18 +1,20 @@
 load("encoding/base64.star", "base64")
 load("render.star", "render")
 
-ICON_FRIDGE_CLOSED = base64.decode("""
-iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAAAXNSR0IArs4c6QAAAfZJREFUOE9dVQlyRSEIA73/kYU2C/razp8uopCEQDMiG5/ojMCnQ986ox2KzOhohBGMCMd5pnfRHZ0ZmZn4lXcyM6qOH/E1Eyk2yXTGwki3EUhheOVUBcn2WqrrC0MA8fuAyfA6o8+JXFvomYbMQAmoEVymjQOdI5Uv6md3VFesXFHVsYGSdykL0uHvjq4m7VvOmC5aPDDSPs3iYLX2tq6UDZkkKINAaPmlFShIdBSbs2N5qkqU3x0lxNfpjsWIUrIho8tF625axlMlEBZYDOSHqFN2j3S6jX36WCUxnKegDoiEMpQBRfDHbV9/SWn6UuynzVEtmUiFhKwhLoKybCP8Usx+e953QsmBRqLbkgdv/EoJocd+JiVYGfJab9gaS52OtdeFzcaRAqrBClum9mh86Dm5m3QOikMm+bBb2GwrWaPO85TMPq3zzHqGUZwJkegfCBnbZuXoQQ9oQZqTcKi7YdlOuNlIWE0+dFPmMYPTsTeufxaE++zBTloNjQSCO+taQc0gxmgCxAWBScHzTJ3s08yAscFqVgdto1WEbVNqyt15s8LeeEN8GtoToQ2FWTZl9/TOK7p2d+a48EK2UEQu3TiqM26XjDc1l3YHaRAntRk2poxF4lHBVJHNNFDG9nKYrfXdpFaTcy0Z778J77w7z2T8W/wHepFpL2+vpssAAAAASUVORK5CYII=
+ICON_2 = base64.decode("""
+iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAAhGVYSWZNTQAqAAAACAAFARIAAwAAAAEAAQAAARoABQAAAAEAAABKARsABQAAAAEAAABSASgAAwAAAAEAAgAAh2kABAAAAAEAAABaAAAAAAAAAEgAAAABAAAASAAAAAEAA6ABAAMAAAABAAEAAKACAAQAAAABAAAAFKADAAQAAAABAAAAFAAAAABB553+AAAACXBIWXMAAAsTAAALEwEAmpwYAAABWWlUWHRYTUw6Y29tLmFkb2JlLnhtcAAAAAAAPHg6eG1wbWV0YSB4bWxuczp4PSJhZG9iZTpuczptZXRhLyIgeDp4bXB0az0iWE1QIENvcmUgNi4wLjAiPgogICA8cmRmOlJERiB4bWxuczpyZGY9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkvMDIvMjItcmRmLXN5bnRheC1ucyMiPgogICAgICA8cmRmOkRlc2NyaXB0aW9uIHJkZjphYm91dD0iIgogICAgICAgICAgICB4bWxuczp0aWZmPSJodHRwOi8vbnMuYWRvYmUuY29tL3RpZmYvMS4wLyI+CiAgICAgICAgIDx0aWZmOk9yaWVudGF0aW9uPjE8L3RpZmY6T3JpZW50YXRpb24+CiAgICAgIDwvcmRmOkRlc2NyaXB0aW9uPgogICA8L3JkZjpSREY+CjwveDp4bXBtZXRhPgoZXuEHAAABW0lEQVQ4Ee2Sv0oDQRDGv825F4yaVrG0VEvBNu9gY2PtE1ibvIB/SkuxtrAP5LCz8AUUUgTFRlGLmJDby+fMJasQN0FREMGBZY+Z+X7zZw/480ZWC3p+ZBCSxoO+DfUwcn+J3FtRsEBjX2DcPWGU2rA7PgH2kTxcNabaG4Dx1vkoOBjQ8UTcJw/mgfRIexOhnM6ZMbvH8mFEqL7PGSuY0sz7DayzWSebCXldZ+f85OUBWNaY0CK9Ry0XjjqRDKr3TpF2tzKwFKdgkXG6OC0zz2p+Il1+0IkjCPTJVkR2Roa2LtIxYZxWykIg7ws+SuV9P3SuLxs0GVzBpSkhRSbuLtihVMvHkVbiYrkMFKxFWTidCM/y5NqNFA3aOGBfswV4275p7Rg31y5tGtu9uFvoAq0hKc8JUkPOfGehgPgmxYIv5Tm5sNEY/B4V8V5eGaxtuy/9gx72f//eBl4BsjaAI8ZoU5gAAAAASUVORK5CYII=
+
 """)
-ICON_FRIDGE_OPEN = base64.decode("""
-iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAAAXNSR0IArs4c6QAAAjVJREFUOE9VVMGRGzEMA8WKLldA7Oc59Sb39KWAOBVJzACgZGc/O6ulSAAEGQFUIYAo+AkEClWBiAL/RfmtmH1ejNxP8BjgWei2f/Cw5lLSOgXOLSVQAUeraI7hZEpCEJ2wIrDWwggfEvcOcyDRdeHDBVjkNxjPGKEO5tIz58QY4yR0zc7DQsal2DUXMhNrTkTmoS8s/iLCiRFpuuTRtKMFYmX/KqxZojtr6c06PFcHfAGmnNTArdm0eb6hMjRHNpv0HbHqBrqmn1X8KcyYTNKUJc6JKowcp4uryKq/SSoiivoTFwUW9KNCwD+7v6K1bdSgI5DsrDQuJzS1EEImoNh8ywKdb/ecFK8fj40dX7++ifLTo1Sqq84q6/HiMzvAnuObLK63P0eCr893BO/Q/LYcKbs70oNGPfWflEseHXLC99ujrQV8fb4hhm0jqWyb7jI9NdKC26TuNE0/lwzMxJfbw65C4P7zDSOzHfGCUHeXKVMPadZ2Yj0beKBm4fLjoQTk9bs1tAf3pBAsG7AWghZQdfeqV8WZBNrpSoTtVVKWTIb8f5cZnERh73Ri6yijB/05cfn4ezyqhPJhW0u2aeft0bOwTvpcURaWCYWwJ/P++X6G4YUyYwtzcT736O1+7P3maakiQlL2srhTw+xUzYQC2nk1Dd3i9dmeiOfm2XuRcfbty6rV9b2/2ibsttykjhuZkvRO5LRo90V2W7doVtr4emVZmwPaf3sp7i2+d22PeHvSGv8DMwh9M8JCSOkAAAAASUVORK5CYII=
+ICON_1 = base64.decode("""
+iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAAhGVYSWZNTQAqAAAACAAFARIAAwAAAAEAAQAAARoABQAAAAEAAABKARsABQAAAAEAAABSASgAAwAAAAEAAgAAh2kABAAAAAEAAABaAAAAAAAAAEgAAAABAAAASAAAAAEAA6ABAAMAAAABAAEAAKACAAQAAAABAAAAFKADAAQAAAABAAAAFAAAAABB553+AAAACXBIWXMAAAsTAAALEwEAmpwYAAABWWlUWHRYTUw6Y29tLmFkb2JlLnhtcAAAAAAAPHg6eG1wbWV0YSB4bWxuczp4PSJhZG9iZTpuczptZXRhLyIgeDp4bXB0az0iWE1QIENvcmUgNi4wLjAiPgogICA8cmRmOlJERiB4bWxuczpyZGY9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkvMDIvMjItcmRmLXN5bnRheC1ucyMiPgogICAgICA8cmRmOkRlc2NyaXB0aW9uIHJkZjphYm91dD0iIgogICAgICAgICAgICB4bWxuczp0aWZmPSJodHRwOi8vbnMuYWRvYmUuY29tL3RpZmYvMS4wLyI+CiAgICAgICAgIDx0aWZmOk9yaWVudGF0aW9uPjE8L3RpZmY6T3JpZW50YXRpb24+CiAgICAgIDwvcmRmOkRlc2NyaXB0aW9uPgogICA8L3JkZjpSREY+CjwveDp4bXBtZXRhPgoZXuEHAAABW0lEQVQ4Ee2Sv0oDQRDGv825F4yaVrG0VEvBNu9gY2PtE1ibvIB/SkuxtrAP5LCz8AUUUgTFRlGLmJDby+fMJasQN0FREMGBZY+Z+X7zZw/480ZWC3p+ZBCSxoO+DfUwcn+J3FtRsEBjX2DcPWGU2rA7PgH2kTxcNabaG4Dx1vkoOBjQ8UTcJw/mgfRIexOhnM6ZMbvH8mFEqL7PGSuY0sz7DayzWSebCXldZ+f85OUBWNaY0CK9Ry0XjjqRDKr3TpF2tzKwFKdgkXG6OC0zz2p+Il1+0IkjCPTJVkR2Roa2LtIxYZxWykIg7ws+SuV9P3SuLxs0GVzBpSkhRSbuLtihVMvHkVbiYrkMFKxFWTidCM/y5NqNFA3aOGBfswV4275p7Rg31y5tGtu9uFvoAq0hKc8JUkPOfGehgPgmxYIv5Tm5sNEY/B4V8V5eGaxtuy/9gx72f//eBl4BsjaAI8ZoU5gAAAAASUVORK5CYII=
+
 """)
 
 LOCALIZED_STRINGS = {
-    "close": {
+    "1": {
         "en": "Running",
     },
-    "fridge": {
+    "2": {
         "en": "theater",
     },
 }
@@ -30,16 +32,16 @@ def main(config):
                         main_align = "space_evenly",  # Controls horizontal alignment
                         cross_align = "center",  # Controls vertical alignment
                         children = [
-                            render.Image(src = ICON_FRIDGE_OPEN),
+                            render.Image(src = ICON_1),
                             render.Stack(
                                 children = [
                                     render.Padding(
                                         pad = (0, 0, 0, 0),
-                                        child = render.Text(LOCALIZED_STRINGS["close"][lang]),
+                                        child = render.Text(LOCALIZED_STRINGS["1"][lang]),
                                     ),
                                     render.Padding(
                                         pad = (0, 10, 0, 0),
-                                        child = render.Text(LOCALIZED_STRINGS["fridge"][lang]),
+                                        child = render.Text(LOCALIZED_STRINGS["2"][lang]),
                                     ),
                                 ],
                             ),
@@ -50,16 +52,16 @@ def main(config):
                         main_align = "space_evenly",  # Controls horizontal alignment
                         cross_align = "center",  # Controls vertical alignment
                         children = [
-                            render.Image(src = ICON_FRIDGE_CLOSED),
+                            render.Image(src = ICON_2),
                             render.Stack(
                                 children = [
                                     render.Padding(
                                         pad = (0, 0, 0, 0),
-                                        child = render.Text(LOCALIZED_STRINGS["close"][lang]),
+                                        child = render.Text(LOCALIZED_STRINGS["1"][lang]),
                                     ),
                                     render.Padding(
                                         pad = (0, 10, 0, 0),
-                                        child = render.Text(LOCALIZED_STRINGS["fridge"][lang]),
+                                        child = render.Text(LOCALIZED_STRINGS["2"][lang]),
                                     ),
                                 ],
                             ),
