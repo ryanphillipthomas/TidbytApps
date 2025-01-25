@@ -29,7 +29,7 @@ def main(config):
                     cross_align="start",
                     children=[
                         render.Text(content=title, color="#A9A9A9"),  # Gray text
-                        render.Text(content=title, font="6x13", weight="bold"),  # Bold and larger text
+                        render.Text(content=title, font="6x13"),  # Bold and larger text
                         render.Text(content=title, color="#FFFFFF"),  # White text
                     ],
                 ),
