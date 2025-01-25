@@ -9,7 +9,7 @@ def main(config):
     base_image_url = config.get("image", "")  # URL to the PNG image
 
     # Add cache-busting query parameter using the current Unix timestamp
-    timestamp = str(int(time.now().unix()))
+    timestamp = str(time.now().unix)  # Correctly access the unix property
     image_url = base_image_url + "?ts=" + timestamp
 
     # Fetch the image from the cache-busted URL
