@@ -5,41 +5,35 @@ load("encoding/base64.star", "base64")
 load("time.star", "time")
 
 def main(config):
-    title = "%s" % config.str("title", "")
-    base_image_url = config.str("image", "")  # URL or file path to the PNG image
+    title = config.get("title", "")
+    base_image_url = config.get("image", "")  # URL to the PNG image
 
     # Add cache-busting query parameter using the current Unix timestamp
-    timestamp = str(time.now().unix)  # Use time.now().unix as a property, not a function
+    timestamp = str(int(time.now().unix()))
     image_url = base_image_url + "?ts=" + timestamp
 
     # Fetch the image from the cache-busted URL
-    img = http.get(image_url).body()
+    response = http.get(image_url)
+    if response.status_code != 200:
+        return render.Text("Failed to load image.")
+    img = response.body()
 
     return render.Root(
-        delay=1000,
-        child=render.Box(
-            child=render.Animation(
-                children=[
-                    render.Row(
-                        expanded=True,  # Use as much horizontal space as possible
-                        main_align="flex_start",  # Align items to the start of the row
-                        cross_align="center",  # Controls vertical alignment
-                        children=[
-                            render.Image(src=img, width=27, height=27),  # Pass Base64-encoded image
-                            render.Box(
-                                child=render.Column(
-                                    children=[
-                                        render.Text(title, opacity=0.7, color="text"),  # Opaque text color
-                                        render.Text(title, bold=True, size=16),  # Bold and slightly larger text
-                                        render.Text(title, color="white"),  # White, non-bold text
-                                    ],
-                                    expanded=False,  # Avoid unnecessary stretching
-                                ),
-                            ),
-                        ],
-                    ),
-                ],
-            ),
+        child=render.Row(
+            main_align="start",  # Align items to the start of the row
+            cross_align="center",  # Center alignment vertically
+            children=[
+                render.Image(src=img, width=27, height=27),  # Display the image
+                render.Column(
+                    main_align="start",
+                    cross_align="start",
+                    children=[
+                        render.Text(content=title, color="#A9A9A9"),  # Gray text
+                        render.Text(content=title, font="6x13", weight="bold"),  # Bold and larger text
+                        render.Text(content=title, color="#FFFFFF"),  # White text
+                    ],
+                ),
+            ],
         ),
     )
     
