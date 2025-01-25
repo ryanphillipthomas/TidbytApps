@@ -2,15 +2,18 @@ load("http.star", "http")
 load("render.star", "render")
 load("schema.star", "schema")
 load("encoding/base64.star", "base64")
+load("time.star", "time")
 
 def main(config):
     title = "%s" % config.str("title", "")
-    image_url = config.str("image", "")  # URL or file path to the PNG image
-    
-    # Add your Home Assistant long-lived access token here
-    headers = {"Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJhZjRhN2NkMTgwZWY0NTM0OWM4ZTA4ODYwODE3OTFmZSIsImlhdCI6MTczNzc0Njk0NiwiZXhwIjoyMDUzMTA2OTQ2fQ.J9KPq5bsS7BErKE3nTaU2OAuSJooZC19K-laXICaD3Y"}
-    
-    img = http.get(image_url, headers=headers).body()
+    base_image_url = config.str("image", "")  # URL or file path to the PNG image
+
+    # Add cache-busting query parameter using the current Unix timestamp
+    timestamp = str(time.now().unix)  # Use time.now().unix as a property, not a function
+    image_url = base_image_url + "?ts=" + timestamp
+
+    # Fetch the image from the cache-busted URL
+    img = http.get(image_url).body()
 
     return render.Root(
         delay = 1000,
@@ -44,7 +47,7 @@ def get_schema():
             schema.Text(
                 id = "image",
                 name = "Image",
-                desc = "Path or URL to the PNG image",
+                desc = "Homeassistant Auth Image URL",
                 icon = "image",
             ),
         ],
