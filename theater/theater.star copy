@@ -1,17 +1,14 @@
-load("http.star", "http")
+load("encoding/base64.star", "base64")
 load("render.star", "render")
 load("schema.star", "schema")
-load("encoding/base64.star", "base64")
 
 def main(config):
     title = "%s" % config.str("title", "")
-    image_url = config.str("image", "")  # URL or file path to the PNG image
+    image_data = config.str("image", "")
     
-    # Add your Home Assistant long-lived access token here
-    headers = {"Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJhZjRhN2NkMTgwZWY0NTM0OWM4ZTA4ODYwODE3OTFmZSIsImlhdCI6MTczNzc0Njk0NiwiZXhwIjoyMDUzMTA2OTQ2fQ.J9KPq5bsS7BErKE3nTaU2OAuSJooZC19K-laXICaD3Y"}
+    # Decode the base64 image string
+    image = base64.decode(image_data)
     
-    img = http.get(image_url, headers=headers).body()
-
     return render.Root(
         delay = 1000,
         child = render.Box(
@@ -22,7 +19,7 @@ def main(config):
                         main_align = "space_evenly",  # Controls horizontal alignment
                         cross_align = "center",  # Controls vertical alignment
                         children = [
-                            render.Image(src=img, width=27, height=27),  # Pass Base64-encoded image
+                            render.Image(image),
                             render.WrappedText(title),
                         ],
                     ),
@@ -44,7 +41,7 @@ def get_schema():
             schema.Text(
                 id = "image",
                 name = "Image",
-                desc = "Path or URL to the PNG image",
+                desc = "Base64 encoded image string",
                 icon = "image",
             ),
         ],
