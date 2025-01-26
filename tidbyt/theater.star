@@ -26,6 +26,7 @@ def main(config):
                         cross_align = "center",  # Controls vertical alignment
                         children = [
                             render.Image(src=img, width=27, height=27),  # Pass Base64-encoded image
+                            render.Box(width=1,height=1),
                             render.WrappedText(title),
                         ],
                     ),
