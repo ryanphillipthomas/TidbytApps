@@ -39,7 +39,9 @@ def rgbRange(start, end, steps):
 
 # from: https://www.educative.io/answers/how-to-convert-hex-to-rgb-and-rgb-to-hex-in-python
 def hex_to_rgb(hex):
-    hex = hex.replace("#", "")
+    #hex = hex.replace("#", "")
+    hex = (hex or "").replace("#", "")
+
     rgb = []
     for i in (0, 2, 4):
         decimal = int(hex[i:i + 2], 16)
