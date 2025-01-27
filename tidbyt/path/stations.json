@@ -1,0 +1,595 @@
+{
+ "stations": [
+  {
+   "station": "NEWARK",
+   "id": "26733",
+   "name": "Newark",
+   "coordinates": {
+    "latitude": 40.73454,
+    "longitude": -74.16375
+   },
+   "platforms": [
+    {
+     "id": "781718",
+     "name": "Newark",
+     "coordinates": {
+      "latitude": 40.73454,
+      "longitude": -74.16375
+     }
+    },
+    {
+     "id": "781719",
+     "name": "Newark",
+     "coordinates": {
+      "latitude": 40.73454,
+      "longitude": -74.16375
+     }
+    }
+   ],
+   "entrances": [
+    {
+     "id": "782490",
+     "name": "Newark",
+     "coordinates": {
+      "latitude": 40.7344,
+      "longitude": -74.1635
+     }
+    },
+    {
+     "id": "782491",
+     "name": "Newark",
+     "coordinates": {
+      "latitude": 40.7343,
+      "longitude": -74.1649
+     }
+    }
+   ],
+   "timezone": "America/New_York"
+  },
+  {
+   "station": "HARRISON",
+   "id": "26729",
+   "name": "Harrison",
+   "coordinates": {
+    "latitude": 40.73942,
+    "longitude": -74.15587
+   },
+   "platforms": [
+    {
+     "id": "781720",
+     "name": "Harrison",
+     "coordinates": {
+      "latitude": 40.73942,
+      "longitude": -74.15587
+     }
+    },
+    {
+     "id": "781721",
+     "name": "Harrison",
+     "coordinates": {
+      "latitude": 40.73942,
+      "longitude": -74.15587
+     }
+    }
+   ],
+   "entrances": [
+    {
+     "id": "782492",
+     "name": "Harrison",
+     "coordinates": {
+      "latitude": 40.739,
+      "longitude": -74.1558
+     }
+    },
+    {
+     "id": "782493",
+     "name": "Harrison",
+     "coordinates": {
+      "latitude": 40.7395,
+      "longitude": -74.1559
+     }
+    }
+   ],
+   "timezone": "America/New_York"
+  },
+  {
+   "station": "JOURNAL_SQUARE",
+   "id": "26731",
+   "name": "Journal Square",
+   "coordinates": {
+    "latitude": 40.73301,
+    "longitude": -74.06289
+   },
+   "platforms": [
+    {
+     "id": "781722",
+     "name": "Journal Square",
+     "coordinates": {
+      "latitude": 40.73301,
+      "longitude": -74.06289
+     }
+    },
+    {
+     "id": "781723",
+     "name": "Journal Square",
+     "coordinates": {
+      "latitude": 40.73301,
+      "longitude": -74.06289
+     }
+    },
+    {
+     "id": "781724",
+     "name": "Journal Square",
+     "coordinates": {
+      "latitude": 40.73301,
+      "longitude": -74.06289
+     }
+    },
+    {
+     "id": "781725",
+     "name": "Journal Square",
+     "coordinates": {
+      "latitude": 40.73301,
+      "longitude": -74.06289
+     }
+    }
+   ],
+   "entrances": [
+    {
+     "id": "4249031",
+     "name": "Journal Square",
+     "coordinates": {
+      "latitude": 40.7317,
+      "longitude": -74.0613
+     }
+    },
+    {
+     "id": "782494",
+     "name": "Journal Square",
+     "coordinates": {
+      "latitude": 40.7322,
+      "longitude": -74.0629
+     }
+    }
+   ],
+   "timezone": "America/New_York"
+  },
+  {
+   "station": "GROVE_STREET",
+   "id": "26728",
+   "name": "Grove Street",
+   "coordinates": {
+    "latitude": 40.71966,
+    "longitude": -74.04245
+   },
+   "platforms": [
+    {
+     "id": "781726",
+     "name": "Grove Street",
+     "coordinates": {
+      "latitude": 40.71966,
+      "longitude": -74.04245
+     }
+    },
+    {
+     "id": "781727",
+     "name": "Grove Street",
+     "coordinates": {
+      "latitude": 40.71966,
+      "longitude": -74.04245
+     }
+    }
+   ],
+   "entrances": [
+    {
+     "id": "782496",
+     "name": "Grove Street",
+     "coordinates": {
+      "latitude": 40.7191,
+      "longitude": -74.0412
+     }
+    },
+    {
+     "id": "782497",
+     "name": "Grove Street",
+     "coordinates": {
+      "latitude": 40.7195,
+      "longitude": -74.0425
+     }
+    }
+   ],
+   "timezone": "America/New_York"
+  },
+  {
+   "station": "EXCHANGE_PLACE",
+   "id": "26727",
+   "name": "Exchange Place",
+   "coordinates": {
+    "latitude": 40.71676,
+    "longitude": -74.03238
+   },
+   "platforms": [
+    {
+     "id": "781730",
+     "name": "Exchange Place",
+     "coordinates": {
+      "latitude": 40.71676,
+      "longitude": -74.03238
+     }
+    },
+    {
+     "id": "781731",
+     "name": "Exchange Place",
+     "coordinates": {
+      "latitude": 40.71676,
+      "longitude": -74.03238
+     }
+    }
+   ],
+   "entrances": [
+    {
+     "id": "782501",
+     "name": "Exchange Place",
+     "coordinates": {
+      "latitude": 40.7165,
+      "longitude": -74.0334
+     }
+    }
+   ],
+   "timezone": "America/New_York"
+  },
+  {
+   "station": "WORLD_TRADE_CENTER",
+   "id": "26734",
+   "name": "World Trade Center",
+   "coordinates": {
+    "latitude": 40.71271,
+    "longitude": -74.01193
+   },
+   "platforms": [
+    {
+     "id": "781763",
+     "name": "World Trade Center",
+     "coordinates": {
+      "latitude": 40.71271,
+      "longitude": -74.01193
+     }
+    },
+    {
+     "id": "794724",
+     "name": "World Trade Center",
+     "coordinates": {
+      "latitude": 40.71271,
+      "longitude": -74.01193
+     }
+    }
+   ],
+   "entrances": [
+    {
+     "id": "782512",
+     "name": "World Trade Center",
+     "coordinates": {
+      "latitude": 40.7118,
+      "longitude": -74.0112
+     }
+    }
+   ],
+   "timezone": "America/New_York"
+  },
+  {
+   "station": "NEWPORT",
+   "id": "26732",
+   "name": "Newport",
+   "coordinates": {
+    "latitude": 40.72699,
+    "longitude": -74.03383
+   },
+   "platforms": [
+    {
+     "id": "781728",
+     "name": "Newport",
+     "coordinates": {
+      "latitude": 40.72699,
+      "longitude": -74.03383
+     }
+    },
+    {
+     "id": "781729",
+     "name": "Newport",
+     "coordinates": {
+      "latitude": 40.72699,
+      "longitude": -74.03383
+     }
+    }
+   ],
+   "entrances": [
+    {
+     "id": "782498",
+     "name": "Newport",
+     "coordinates": {
+      "latitude": 40.727,
+      "longitude": -74.0338
+     }
+    }
+   ],
+   "timezone": "America/New_York"
+  },
+  {
+   "station": "HOBOKEN",
+   "id": "26730",
+   "name": "Hoboken",
+   "coordinates": {
+    "latitude": 40.73586,
+    "longitude": -74.02922
+   },
+   "platforms": [
+    {
+     "id": "781715",
+     "name": "Hoboken",
+     "coordinates": {
+      "latitude": 40.73586,
+      "longitude": -74.02922
+     }
+    },
+    {
+     "id": "781716",
+     "name": "Hoboken",
+     "coordinates": {
+      "latitude": 40.73586,
+      "longitude": -74.02922
+     }
+    },
+    {
+     "id": "781717",
+     "name": "Hoboken",
+     "coordinates": {
+      "latitude": 40.73586,
+      "longitude": -74.02922
+     }
+    }
+   ],
+   "entrances": [
+    {
+     "id": "782499",
+     "name": "Hoboken",
+     "coordinates": {
+      "latitude": 40.7356,
+      "longitude": -74.0288
+     }
+    },
+    {
+     "id": "782500",
+     "name": "Hoboken",
+     "coordinates": {
+      "latitude": 40.7352,
+      "longitude": -74.0276
+     }
+    }
+   ],
+   "timezone": "America/New_York"
+  },
+  {
+   "station": "CHRISTOPHER_STREET",
+   "id": "26726",
+   "name": "Christopher Street",
+   "coordinates": {
+    "latitude": 40.73295,
+    "longitude": -74.00707
+   },
+   "platforms": [
+    {
+     "id": "781732",
+     "name": "Christopher Street",
+     "coordinates": {
+      "latitude": 40.73295,
+      "longitude": -74.00707
+     }
+    },
+    {
+     "id": "781733",
+     "name": "Christopher Street",
+     "coordinates": {
+      "latitude": 40.73295,
+      "longitude": -74.00707
+     }
+    }
+   ],
+   "entrances": [
+    {
+     "id": "782503",
+     "name": "Christopher Street",
+     "coordinates": {
+      "latitude": 40.733,
+      "longitude": -74.0071
+     }
+    }
+   ],
+   "timezone": "America/New_York"
+  },
+  {
+   "station": "NINTH_STREET",
+   "id": "26725",
+   "name": "9th Street",
+   "coordinates": {
+    "latitude": 40.73424,
+    "longitude": -73.9991
+   },
+   "platforms": [
+    {
+     "id": "781734",
+     "name": "9th Street",
+     "coordinates": {
+      "latitude": 40.73424,
+      "longitude": -73.9991
+     }
+    },
+    {
+     "id": "781735",
+     "name": "9th Street",
+     "coordinates": {
+      "latitude": 40.73424,
+      "longitude": -73.9991
+     }
+    }
+   ],
+   "entrances": [
+    {
+     "id": "782504",
+     "name": "9th Street",
+     "coordinates": {
+      "latitude": 40.7341,
+      "longitude": -73.9987
+     }
+    }
+   ],
+   "timezone": "America/New_York"
+  },
+  {
+   "station": "FOURTEENTH_STREET",
+   "id": "26722",
+   "name": "14th Street",
+   "coordinates": {
+    "latitude": 40.73735,
+    "longitude": -73.99684
+   },
+   "platforms": [
+    {
+     "id": "781736",
+     "name": "14th Street",
+     "coordinates": {
+      "latitude": 40.73735,
+      "longitude": -73.99684
+     }
+    },
+    {
+     "id": "781737",
+     "name": "14th Street",
+     "coordinates": {
+      "latitude": 40.73735,
+      "longitude": -73.99684
+     }
+    }
+   ],
+   "entrances": [
+    {
+     "id": "782505",
+     "name": "14th Street",
+     "coordinates": {
+      "latitude": 40.7377,
+      "longitude": -73.997
+     }
+    },
+    {
+     "id": "782506",
+     "name": "14th Street",
+     "coordinates": {
+      "latitude": 40.7373,
+      "longitude": -73.9972
+     }
+    }
+   ],
+   "timezone": "America/New_York"
+  },
+  {
+   "station": "TWENTY_THIRD_STREET",
+   "id": "26723",
+   "name": "23rd Street",
+   "coordinates": {
+    "latitude": 40.7429,
+    "longitude": -73.99278
+   },
+   "platforms": [
+    {
+     "id": "781738",
+     "name": "23rd Street",
+     "coordinates": {
+      "latitude": 40.7429,
+      "longitude": -73.99278
+     }
+    },
+    {
+     "id": "781739",
+     "name": "23rd Street",
+     "coordinates": {
+      "latitude": 40.7429,
+      "longitude": -73.99278
+     }
+    }
+   ],
+   "entrances": [
+    {
+     "id": "782507",
+     "name": "23rd Street",
+     "coordinates": {
+      "latitude": 40.7428,
+      "longitude": -73.9927
+     }
+    }
+   ],
+   "timezone": "America/New_York"
+  },
+  {
+   "station": "THIRTY_THIRD_STREET",
+   "id": "26724",
+   "name": "33rd Street",
+   "coordinates": {
+    "latitude": 40.74912,
+    "longitude": -73.98827
+   },
+   "platforms": [
+    {
+     "id": "781740",
+     "name": "33rd Street",
+     "coordinates": {
+      "latitude": 40.74912,
+      "longitude": -73.98827
+     }
+    },
+    {
+     "id": "781741",
+     "name": "33rd Street",
+     "coordinates": {
+      "latitude": 40.74912,
+      "longitude": -73.98827
+     }
+    }
+   ],
+   "entrances": [
+    {
+     "id": "782508",
+     "name": "33rd Street",
+     "coordinates": {
+      "latitude": 40.7487,
+      "longitude": -73.9886
+     }
+    },
+    {
+     "id": "782509",
+     "name": "33rd Street",
+     "coordinates": {
+      "latitude": 40.7485,
+      "longitude": -73.9884
+     }
+    },
+    {
+     "id": "782510",
+     "name": "33rd Street",
+     "coordinates": {
+      "latitude": 40.7484,
+      "longitude": -73.9876
+     }
+    },
+    {
+     "id": "782511",
+     "name": "33rd Street",
+     "coordinates": {
+      "latitude": 40.7495,
+      "longitude": -73.9885
+     }
+    }
+   ],
+   "timezone": "America/New_York"
+  }
+ ],
+ "nextPageToken": ""
+}
