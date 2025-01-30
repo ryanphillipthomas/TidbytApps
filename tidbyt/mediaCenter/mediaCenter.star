@@ -22,9 +22,21 @@ def get_schema():
         version = "1",
         fields = [
             schema.Text(
+                id = "artist",
+                name = "Artist?",
+                desc = "Artist of Media",
+                icon = "user",
+            ),
+            schema.Text(
                 id = "title",
                 name = "Title?",
-                desc = "Title of playing content",
+                desc = "Title of Media",
+                icon = "user",
+            ),
+            schema.Text(
+                id = "source",
+                name = "Source?",
+                desc = "Cloffice or Studio",
                 icon = "user",
             ),
             schema.Text(
